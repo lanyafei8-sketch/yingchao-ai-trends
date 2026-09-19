@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f9f6" />
+  <meta name="description" content="抖音与 B 站 AI 短片趋势榜，按播放、点赞、转发与增长速度探索热门内容。" />
+  <title>映潮 AI · AI短片趋势榜</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="映潮 AI 首页"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-text">映潮<span>AI</span><small>INSPIRATION IN MOTION</small></span></a>
+      <div class="side-caption">探索</div>
+      <nav class="nav-list">
+        <a class="nav-item active" href="#rankings"><span class="nav-icon">▦</span>趋势总榜<span class="nav-dot"></span></a>
+        <button class="nav-item" data-nav-platform="douyin"><span class="nav-icon">♪</span>抖音热榜</button>
+        <button class="nav-item" data-nav-platform="bilibili"><span class="nav-icon">▣</span>B站热榜</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-card"><div class="side-card-icon">✦</div><strong>发现下一个爆款</strong><p>用数据捕捉 AI 影像的每一次破圈。</p><button id="sideImport" class="side-link">导入榜单数据 <span>↗</span></button></div>
+        <div class="side-footer">映潮 AI <span>© 2026</span></div>
+      </div>
+    </aside>
+
+    <main id="top" class="main-content">
+      <header class="topbar"><div class="mobile-brand">映潮<span>AI</span></div><div class="breadcrumb">探索 <span>/</span> 趋势总榜</div><div class="top-actions"><div id="dataStatus" class="status-pill"><span class="status-dot"></span>演示数据</div><button id="openImport" class="top-button">＋ 导入数据</button></div></header>
+
+      <section id="rankings" class="rank-section">
+        <div class="section-heading"><div><div class="section-kicker"><span class="section-kicker-line"></span> THE CHARTS</div><h1>AI 短片热度榜 <span class="heading-star">✳</span></h1><p>点击作品直达原视频；点击“详情”查看故事与分镜拆解</p></div><div class="update-label"><span class="update-pulse"></span><span id="listUpdate">数据来源：演示样例</span></div></div>
+        <div class="board">
+          <div class="board-topline"><div class="platform-tabs" role="tablist" aria-label="平台筛选"><button class="platform-tab active" data-platform="all" role="tab" aria-selected="true">全部平台 <span id="allCount">60</span></button><button class="platform-tab" data-platform="douyin" role="tab" aria-selected="false"><b class="dy-symbol">♪</b> 抖音 <span id="dyCount">30</span></button><button class="platform-tab" data-platform="bilibili" role="tab" aria-selected="false"><b class="bili-symbol">▣</b> B站 <span id="biliCount">30</span></button></div><div class="board-tools"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索作品 / 创作者" aria-label="搜索作品或创作者" /></label><select id="periodSelect" aria-label="时间范围"><option value="all">全部时间</option><option value="24h">近 24 小时</option><option value="7d">近 7 天</option><option value="30d">近 30 天</option></select></div></div>
+          <div class="table-head"><span>排名 / 作品</span><span>播放量</span><span>点赞量</span><span>转发量</span><span>上涨速度</span><span>详情</span></div>
+          <div id="rankingList" class="ranking-list" aria-live="polite"></div>
+          <div class="board-bottom"><div><span class="bottom-spark">✦</span> <span id="boardFoot">展示前 30 名 · 数值为演示数据</span></div><button id="backToTop" class="back-top">回到顶部 ↑</button></div>
+        </div>
+      </section>
+
+      <footer class="footer"><div class="footer-brand">映潮<span>AI</span></div><p>看见灵感的流向。</p><span>© 2026 映潮 AI · 为创作者而造</span></footer>
+    </main>
+  </div>
+
+  <dialog id="importDialog" class="import-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><div class="dialog-kicker">DATA SOURCE</div><h2>导入榜单数据</h2><p class="dialog-intro">导入作品公开指标或已获授权的数据快照。榜单会保存在当前浏览器中；同一作品两次有效播放量采样可计算增长速度。缺失指标请留空。</p><div class="dialog-tabs"><button id="uploadTab" class="active">上传 CSV</button><button id="urlTab">JSON 数据地址</button></div><div id="uploadPanel" class="dialog-panel"><label class="upload-area" for="csvFile"><span class="upload-icon">⇧</span><strong>选择 CSV 文件</strong><small>支持 UTF-8 编码，每次可导入多条作品</small></label><input id="csvFile" type="file" accept=".csv,text/csv" hidden /><button id="downloadTemplate" class="template-link">下载 CSV 模板 ↗</button></div><div id="urlPanel" class="dialog-panel hidden"><label class="field-label" for="feedUrl">公开 JSON 接口地址</label><input id="feedUrl" class="feed-input" type="url" placeholder="https://example.com/ai-rankings.json" /><button id="saveFeed" class="dialog-primary">连接并读取</button><small>接口需允许浏览器跨域访问，并返回包含 videos 数组的 JSON。</small></div><div id="importMessage" class="import-message" role="status"></div><div class="dialog-divider"></div><div class="dialog-actions"><button id="resetSample" class="reset-button">恢复公开采样</button><button id="resetDemo" class="reset-button">每平台 30 条演示</button><span>仅在当前浏览器保存</span></div></dialog>
+  <dialog id="detailDialog" class="detail-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><div id="detailBody"></div></dialog>
+  <script src="app.js?v=daily-1"></script>
+</body>
+</html>

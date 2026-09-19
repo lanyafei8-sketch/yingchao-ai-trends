@@ -1,0 +1,6 @@
+.netlify/
+dist/
+output/
+tmp/
+*.zip
+*简历*
