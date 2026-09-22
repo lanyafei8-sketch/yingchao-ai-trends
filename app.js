@@ -115,7 +115,7 @@ const biliCreators=['七号放映机','不眠动画社','星云工作室','阿�
 const categories=['科幻','国风','奇幻','动画','视觉实验','治愈','剧情','创意短片'];
 const STORE_KEY='yingchao_rankings_v1';
 const FEED_KEY='yingchao_feed_v1';
-const state={platform:'all',sort:'likes',period:'48h',query:'',source:'sample',videos:[],feedUrl:''};
+const state={platform:'all',sort:'likes',period:'all',query:'',source:'sample',videos:[],feedUrl:''};
 const IMPORT_LIMITS=Object.freeze({maxRows:500,maxBytes:2*1024*1024,maxStoredChars:3*1024*1024,maxMetric:1e12,title:120,creator:80,category:40,id:200,url:2048});
 const sampleAt='2026-09-18T15:10:00+08:00';
 const newSampleAt='2026-09-18T16:00:00+08:00';
@@ -292,7 +292,7 @@ function wire(){
   document.getElementById('csvFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>IMPORT_LIMITS.maxBytes)throw new Error('CSV 文件不能超过 2 MB。');const count=importRows(parseCSV(await file.text()),'import');setMessage(`已导入 ${count} 条数据。榜单已更新。`);}catch(err){setMessage(err.message,true);}e.target.value='';});
   document.getElementById('downloadTemplate').addEventListener('click',()=>{const csv='id,platform,title,creator,views,likes,comments,shares,duration,commentHighlights,visualStyle,url,publishedAt,observedAt,category\nvideo-001,douyin,我的AI短片,创作者,120000,108900,3200,1300,00:58,观众关注主角的选择与结尾反转,写实电影感与低饱和冷色调,https://example.com/video/1,2026-09-18T08:00:00+08:00,2026-09-18T12:00:00+08:00,科幻\n';const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));a.download='映潮AI-数据模板.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
   document.getElementById('saveFeed').addEventListener('click',async()=>{const button=document.getElementById('saveFeed');button.disabled=true;button.textContent='读取中…';try{await loadFeed(document.getElementById('feedUrl').value);}catch(err){setMessage(`读取失败：${err.message} 请检查地址和跨域设置。`,true);}finally{button.disabled=false;button.textContent='连接并读取';}});
-  document.getElementById('resetSample').addEventListener('click',()=>{state.videos=publicSamples;state.source='sample';state.sort='likes';state.period='48h';state.feedUrl='';document.getElementById('periodSelect').value='48h';localStorage.removeItem(FEED_KEY);localStorage.removeItem(STORE_KEY);render();setMessage('已恢复 2026 年 9 月 22 日核验的公开网页数据。');});
+  document.getElementById('resetSample').addEventListener('click',()=>{state.videos=publicSamples;state.source='sample';state.sort='likes';state.period='all';state.feedUrl='';document.getElementById('periodSelect').value='all';localStorage.removeItem(FEED_KEY);localStorage.removeItem(STORE_KEY);render();setMessage('已恢复 2026 年 9 月 22 日核验的公开网页数据。');});
   document.getElementById('resetDemo').addEventListener('click',()=>{state.videos=seedVideos();state.source='demo';state.sort='score';state.feedUrl='';localStorage.removeItem(FEED_KEY);save();render();setMessage('已切换到每平台 30 条演示数据。');});
 }
 loadSaved();wire();render();if(state.feedUrl){document.getElementById('feedUrl').value=state.feedUrl;loadFeed(state.feedUrl,true).catch(()=>{});setInterval(()=>loadFeed(state.feedUrl,true).catch(()=>{}),5*60*1000);}
