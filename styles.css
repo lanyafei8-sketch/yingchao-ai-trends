@@ -234,3 +234,22 @@ body{background:var(--bg);color:var(--text)}
   .section-heading{display:block}
   .update-label{display:flex;text-align:left;max-width:none;margin-top:9px;font-size:11px}
 }
+
+/* 公开采集核验状态 */
+.audit-strip{display:grid;grid-template-columns:minmax(0,1fr) 180px 230px;gap:12px;margin:-2px 0 18px}
+.audit-copy,.audit-count{border:1px solid #d7e7da;border-radius:10px;background:#fff;padding:16px 18px}
+.audit-copy span{display:block;color:#24784a;font-size:11px;font-weight:800;letter-spacing:.8px}
+.audit-copy strong{display:block;color:#1b3324;font-size:16px;margin-top:7px}
+.audit-copy p{color:#657a6c;font-size:12px;line-height:1.7;margin:5px 0 0}
+.audit-count{display:flex;flex-direction:column;justify-content:center}
+.audit-count small{color:#607466;font-size:12px}
+.audit-count strong{color:#1e6e43;font-size:24px;line-height:1.2;margin:5px 0}
+.audit-count strong span{color:#84958a;font-size:13px;font-weight:600}
+.audit-count em{color:#6d8173;font-size:11px;font-style:normal;line-height:1.5}
+.detail-evidence{display:grid;gap:8px;margin:12px 0 18px}
+.detail-evidence div{border-left:3px solid #83b795;background:#f5f9f5;padding:10px 12px}
+.detail-evidence strong{display:block;color:#315e42;font-size:11px}
+.detail-evidence p{color:#5f7466;font-size:12px;line-height:1.7;margin:4px 0 0}
+.detail-metrics{grid-template-columns:repeat(3,1fr)}
+@media(max-width:800px){.audit-strip{grid-template-columns:1fr 1fr}.audit-copy{grid-column:1/-1}}
+@media(max-width:520px){.audit-strip{grid-template-columns:1fr}.audit-copy{grid-column:auto}.audit-count{padding:13px 16px}.audit-copy strong{font-size:14px}.detail-metrics{grid-template-columns:repeat(2,1fr)}}
