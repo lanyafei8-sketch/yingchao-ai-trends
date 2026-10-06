@@ -120,11 +120,11 @@ const IMPORT_LIMITS=Object.freeze({maxRows:500,maxBytes:2*1024*1024,maxStoredCha
 const sampleAt='2026-09-18T15:10:00+08:00';
 const newSampleAt='2026-09-18T16:00:00+08:00';
 const auditAt='2026-09-22T09:00:00+08:00';
-const latestAuditAt='2026-09-30T11:04:00+08:00';
+const latestAuditAt='2026-10-06T20:17:00+08:00';
 const publicSamples=[
   {platform:'douyin',title:'《棋逢对手》',creator:'风墟AIGC',likes:204000,shares:77000,views:null,url:'https://www.douyin.com/video/7685996127329570075',publishedAt:'2026-09-16T13:10:00+08:00'},
   {platform:'douyin',title:'《人生反悔局》完整版',creator:'罐头Visuals',likes:1078000,shares:550000,views:null,url:'https://www.douyin.com/video/7684381737857649970',publishedAt:'2026-09-12T10:30:00+08:00'},
-  {platform:'douyin',title:'AI短片《外星人要接我走》重制版',creator:'站立起来的影子',likes:4811000,comments:1083,shares:1412000,views:null,url:'https://www.douyin.com/video/7661058775876504874',publishedAt:'2026-07-11T08:21:00+08:00',observedAt:latestAuditAt,commentHighlights:'“不会中途说忙”击中陪伴缺失；观众认为特效普及后，灵魂和深度更重要，并把结尾理解为老人被想起或死亡后的感应。',visualStyle:'乡村现实场景包裹科幻设定，老式的确良外星服饰，由荒诞幽默转向孤独情绪。',changeNote:'与 9 月 24 日快照相比，点赞增加约 2.4 万、评论增加 205、分享增加约 0.5 万；抖音未公开播放量，未计算播放增速。'},
+  {platform:'douyin',title:'AI短片《外星人要接我走》重制版',creator:'站立起来的影子',likes:4826000,comments:28000,shares:1415000,views:null,url:'https://www.douyin.com/video/7661058775876504874',publishedAt:'2026-07-11T08:21:00+08:00',observedAt:latestAuditAt,commentHighlights:'“不会中途说忙”击中陪伴缺失；观众认为特效普及后，灵魂和深度更重要，并把结尾理解为老人被想起或死亡后的感应。',visualStyle:'乡村现实场景包裹科幻设定，老式的确良外星服饰，由荒诞幽默转向孤独情绪。',changeNote:'10 月 6 日公开页显示点赞约 482.6 万、评论约 2.8 万、转发约 141.5 万；抖音未公开播放量，未计算播放增速。'},
   {platform:'douyin',title:'AI原创短片《丧尸清道夫》-重制版',creator:'Mx-Shell',likes:4505000,comments:59000,shares:1635000,views:null,url:'https://www.douyin.com/video/7637813720252435755',publishedAt:'2026-05-09T16:58:00+08:00',observedAt:auditAt,commentHighlights:'观众强调难点不只是提示词，还包括连贯分镜、人物一致性与后期剪辑。',visualStyle:'末日悬疑，国产《爱死机》式电影质感。'},
   {platform:'douyin',title:'《归墟》第一季 1-9 合集',creator:'泫九',likes:3289000,comments:44000,shares:1783000,views:null,url:'https://www.douyin.com/video/7662067746263420211',publishedAt:'2026-07-14T02:33:00+08:00',observedAt:latestAuditAt,commentHighlights:'高赞评论认可双线叙事、剧本、镜头和节奏；观众也围绕巨型昆虫的生物学合理性展开讨论。',visualStyle:'巨型昆虫与城市毁灭，末日废土、生物灾难和双线叙事。',changeNote:'9 月 24 日公开页显示点赞约 328.9 万、评论约 4.4 万、转发约 178.3 万；评论字段按当天页面显示重新校正。'},
   {platform:'douyin',title:'一口气看完《末日山宿》1-11 集 4K 完整版',creator:'关渐帧',likes:2158000,comments:45000,shares:1066000,views:null,url:'https://www.douyin.com/video/7658157163897949466',publishedAt:'2026-07-03T19:20:00+08:00',observedAt:auditAt,commentHighlights:'智慧丧尸设定带来持续压迫感；女丧尸被多条高赞评论称为全剧最恐怖角色，观众也认可群像牺牲。',visualStyle:'4K 末日生存长片，封闭山宿、智慧丧尸与群像惊悚。'},
@@ -163,7 +163,7 @@ const editorialByUrl={
     script:'用一次错误选择建立痛点；连续两到三次反悔，每次解决旧问题又制造新困境；终局让主角主动承担当下的选择，而不是再靠设定重来。'
   },
   'https://www.douyin.com/video/7661058775876504874':{
-    signal:'创作者简介强调科幻叙事与农村老人晚年孤独；可见评论集中谈陪伴、想念和给家中老人打电话。9 月 30 日公开页约 481.1 万赞。',
+    signal:'创作者简介强调科幻叙事与农村老人晚年孤独；可见评论集中谈陪伴、想念和给家中老人打电话。10 月 6 日公开页约 482.6 万赞。',
     why:'“外星人来接我”先制造好奇，现实里的孤独逐渐显形；科幻外壳承接了具体的亲情感受，使评论区能接续各自的经历。',
     ideas:['未来城市的无人陪诊机器发现，病人最需要的不是路线规划','一台只会提醒节日的旧收音机，意外保存了家人未说出口的话'],
     script:'用轻巧的奇异设定开场，逐步放进具体生活细节；在观众以为要得到奇观答案时揭示真正的情感需求，结尾留一个现实中可执行的动作。'
@@ -251,7 +251,7 @@ function render(){
   document.getElementById('dataStatus').innerHTML=`<span class="status-dot"></span>${state.source==='demo'?'演示数据':state.source==='sample'?'网页采样':state.source==='feed'?'外部数据':'已导入数据'}`;
   const latest=Math.max(...state.videos.map(v=>new Date(v.observedAt).getTime()).filter(Number.isFinite));
   const checked=Number.isFinite(latest)?new Date(latest).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}):'暂无';
-  document.getElementById('listUpdate').textContent=state.source==='demo'?'数据来源：演示样例':state.source==='sample'?`本轮核验 2026/09/30 · 历史样本最近记录 ${checked}`:state.source==='feed'?'数据来源：JSON 接口':'数据来源：本地导入';
+  document.getElementById('listUpdate').textContent=state.source==='demo'?'数据来源：演示样例':state.source==='sample'?`本轮核验 2026/10/06 · 历史样本最近记录 ${checked}`:state.source==='feed'?'数据来源：JSON 接口':'数据来源：本地导入';
   document.querySelectorAll('.platform-tab').forEach(b=>{const on=b.dataset.platform===state.platform;b.classList.toggle('active',on);b.setAttribute('aria-selected',on);});
 }
 function rowHTML(v,i){const rank=i+1;const velocity=v.velocity==null?'—':'+'+num(v.velocity);const url=safeUrl(v.url);return `<div class="ranking-row" data-id="${esc(v.id)}">${url?`<a class="row-open-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="打开第 ${rank} 名 ${esc(v.title)} 的原视频" title="打开原视频"></a>`:''}<div class="rank-main"><span class="rank-number ${rank<=3?'top'+rank:''}">${String(rank).padStart(2,'0')}</span><div class="item-copy"><div class="item-title">${esc(v.title)}</div><div class="item-meta"><span class="platform-badge ${v.platform}">${v.platform==='douyin'?'♪':'▣'} ${platformText(v.platform)}</span><span class="creator">${esc(v.creator)}</span><span class="dot-sep">·</span><span class="tag">${esc(v.category)}</span></div></div></div><div class="row-metric">${num(v.views)}<small>次播放</small></div><div class="row-metric">${num(v.likes)}<small>次喜欢</small></div><div class="row-metric">${num(v.shares)}<small>次转发</small></div><div class="row-metric velocity">${velocity}<small>播放 / 小时</small></div><button type="button" class="row-arrow row-detail" data-id="${esc(v.id)}" aria-label="查看第 ${rank} 名 ${esc(v.title)} 的详情与创作拆解">详情 ↗</button></div>`;}
@@ -295,7 +295,7 @@ function wire(){
   document.getElementById('csvFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>IMPORT_LIMITS.maxBytes)throw new Error('CSV 文件不能超过 2 MB。');const count=importRows(parseCSV(await file.text()),'import');setMessage(`已导入 ${count} 条数据。榜单已更新。`);}catch(err){setMessage(err.message,true);}e.target.value='';});
   document.getElementById('downloadTemplate').addEventListener('click',()=>{const csv='id,platform,title,creator,views,likes,comments,shares,duration,commentHighlights,visualStyle,url,publishedAt,observedAt,category\nvideo-001,douyin,我的AI短片,创作者,120000,108900,3200,1300,00:58,观众关注主角的选择与结尾反转,写实电影感与低饱和冷色调,https://example.com/video/1,2026-09-18T08:00:00+08:00,2026-09-18T12:00:00+08:00,科幻\n';const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));a.download='映潮AI-数据模板.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
   document.getElementById('saveFeed').addEventListener('click',async()=>{const button=document.getElementById('saveFeed');button.disabled=true;button.textContent='读取中…';try{await loadFeed(document.getElementById('feedUrl').value);}catch(err){setMessage(`读取失败：${err.message} 请检查地址和跨域设置。`,true);}finally{button.disabled=false;button.textContent='连接并读取';}});
-  document.getElementById('resetSample').addEventListener('click',()=>{state.videos=publicSamples;state.source='sample';state.sort='likes';state.period='all';state.feedUrl='';document.getElementById('periodSelect').value='all';localStorage.removeItem(FEED_KEY);localStorage.removeItem(STORE_KEY);render();setMessage('已恢复 2026 年 9 月 30 日核验的公开网页数据。');});
+  document.getElementById('resetSample').addEventListener('click',()=>{state.videos=publicSamples;state.source='sample';state.sort='likes';state.period='all';state.feedUrl='';document.getElementById('periodSelect').value='all';localStorage.removeItem(FEED_KEY);localStorage.removeItem(STORE_KEY);render();setMessage('已恢复 2026 年 10 月 6 日核验的公开网页数据。');});
   document.getElementById('resetDemo').addEventListener('click',()=>{state.videos=seedVideos();state.source='demo';state.sort='score';state.feedUrl='';localStorage.removeItem(FEED_KEY);save();render();setMessage('已切换到每平台 30 条演示数据。');});
 }
 loadSaved();wire();render();if(state.feedUrl){document.getElementById('feedUrl').value=state.feedUrl;loadFeed(state.feedUrl,true).catch(()=>{});setInterval(()=>loadFeed(state.feedUrl,true).catch(()=>{}),5*60*1000);}
